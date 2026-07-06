@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1783327026431,
+      "rok": "2026",
+      "data": "2026-07-06",
+      "opis": "test",
+      "firma": "fds",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Reklama",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 200,
+      "brutto": 246,
+      "nr": ""
+    },
+    {
       "id": 1001,
       "rok": "2025",
       "data": "2025-12-28",
