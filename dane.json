@@ -1,20 +1,6 @@
 {
   "expenses": [
     {
-      "id": 1783327026431,
-      "rok": "2026",
-      "data": "2026-07-06",
-      "opis": "test",
-      "firma": "fds",
-      "spolka": "verocargo sp. z o.o.",
-      "kat": "Reklama",
-      "typ": "Jednorazowy",
-      "vat": 23,
-      "netto": 200,
-      "brutto": 246,
-      "nr": ""
-    },
-    {
       "id": 1001,
       "rok": "2025",
       "data": "2025-12-28",
@@ -63,7 +49,7 @@
       "kat": "Digital",
       "typ": "Stały",
       "netto": 8136,
-      "brutto": 10007.28,
+      "brutto": 8136,
       "nr": "",
       "dateFrom": "2026-01-01",
       "dateTo": "2026-12-31",
@@ -79,13 +65,14 @@
       "spolka": "verocargo sp. z o.o.",
       "kat": "Digital",
       "typ": "Stały",
+      "vat": 23,
       "netto": 308,
+      "nettoM": 25.67,
       "brutto": 378.84,
       "nr": "",
       "dateFrom": "2026-01-01",
       "dateTo": "2026-12-31",
-      "months": 12,
-      "nettoM": 25.67
+      "months": 12
     },
     {
       "id": 1006,
@@ -97,7 +84,7 @@
       "kat": "Sponsoring",
       "typ": "Stały",
       "netto": 1000,
-      "brutto": 1230,
+      "brutto": 1000,
       "nr": "",
       "dateFrom": "2026-01-01",
       "dateTo": "2026-12-31",
@@ -114,7 +101,7 @@
       "kat": "Sponsoring",
       "typ": "Stały",
       "netto": 1000,
-      "brutto": 1230,
+      "brutto": 1000,
       "nr": "",
       "dateFrom": "2026-01-01",
       "dateTo": "2026-12-31",
@@ -148,7 +135,7 @@
       "kat": "B2B/Repre",
       "typ": "Stały",
       "netto": 83700,
-      "brutto": 102951,
+      "brutto": 83700,
       "nr": "",
       "dateFrom": "2026-01-01",
       "dateTo": "2026-12-31",
@@ -180,14 +167,15 @@
       "firma": "Canva",
       "spolka": "verocargo power zielińska",
       "kat": "Digital",
-      "typ": "Subskrypcja",
-      "netto": 4390.2,
-      "brutto": 5400,
+      "typ": "Stały",
+      "vat": 23,
+      "netto": 365.85,
+      "nettoM": 30.49,
+      "brutto": 450,
       "nr": "???",
-      "dateFrom": "2026-01-11",
-      "dateTo": "2027-01-10",
-      "months": 12,
-      "nettoM": 365.85
+      "dateFrom": "2026-01-01",
+      "dateTo": "2026-12-31",
+      "months": 12
     },
     {
       "id": 1011,
@@ -224,13 +212,14 @@
       "spolka": "verocargo sp. z o.o.",
       "kat": "Sponsoring",
       "typ": "Stały",
-      "netto": 170400,
-      "brutto": 209592,
+      "vat": 23,
+      "netto": 85200,
+      "nettoM": 7100,
+      "brutto": 104796,
       "nr": "",
       "dateFrom": "2026-02-01",
       "dateTo": "2027-01-31",
-      "months": 12,
-      "nettoM": 14200
+      "months": 12
     },
     {
       "id": 1014,
@@ -239,8 +228,9 @@
       "opis": "Piłka ręczna kobiet – usługa reklamowa",
       "firma": "SPR Sośnica Gliwice sp. z o.o.",
       "spolka": "verocargo sp. z o.o.",
-      "kat": "Sponsoring",
+      "kat": "Rezerwa",
       "typ": "Jednorazowy",
+      "vat": 23,
       "netto": 30000,
       "brutto": 36900,
       "nr": ""
@@ -306,6 +296,7 @@
       "spolka": "verocargo power zielińska",
       "kat": "Branding",
       "typ": "Jednorazowy",
+      "vat": 23,
       "netto": 1200,
       "brutto": 1476,
       "nr": ""
@@ -488,8 +479,9 @@
       "spolka": "verocargo power zielińska",
       "kat": "Reklama",
       "typ": "Jednorazowy",
+      "vat": 23,
       "netto": 350,
-      "brutto": 350,
+      "brutto": 430.5,
       "nr": ""
     },
     {
@@ -501,8 +493,9 @@
       "spolka": "verocargo power zielińska",
       "kat": "Reklama",
       "typ": "Jednorazowy",
+      "vat": 23,
       "netto": 2000,
-      "brutto": 2000,
+      "brutto": 2460,
       "nr": ""
     },
     {
@@ -540,8 +533,9 @@
       "spolka": "verocargo power zielińska",
       "kat": "Reklama",
       "typ": "Jednorazowy",
+      "vat": 23,
       "netto": 440.36,
-      "brutto": 440.36,
+      "brutto": 541.64,
       "nr": ""
     },
     {
@@ -553,8 +547,9 @@
       "spolka": "verocargo power zielińska",
       "kat": "Reklama",
       "typ": "Jednorazowy",
+      "vat": 23,
       "netto": 239.96,
-      "brutto": 239.96,
+      "brutto": 295.15,
       "nr": ""
     },
     {
@@ -592,8 +587,9 @@
       "spolka": "verocargo power zielińska",
       "kat": "Reklama",
       "typ": "Jednorazowy",
+      "vat": 23,
       "netto": 451.09,
-      "brutto": 451.09,
+      "brutto": 554.84,
       "nr": ""
     },
     {
@@ -613,32 +609,36 @@
   "plan": {
     "2026": {
       "Reklama": {
-        "netto": 0,
-        "brutto": 154000
+        "netto": 154000,
+        "brutto": 189420
       },
       "Digital": {
-        "netto": 0,
-        "brutto": 58225
+        "netto": 58225,
+        "brutto": 71617
       },
       "Sponsoring": {
-        "netto": 0,
-        "brutto": 164650
+        "netto": 164650,
+        "brutto": 202520
       },
       "Eventy": {
-        "netto": 0,
-        "brutto": 100555
+        "netto": 100555,
+        "brutto": 123683
       },
       "Branding": {
-        "netto": 0,
-        "brutto": 120000
+        "netto": 120000,
+        "brutto": 147600
       },
       "Produkcja": {
-        "netto": 0,
-        "brutto": 145000
+        "netto": 145000,
+        "brutto": 178350
       },
       "B2B/Repre": {
-        "netto": 0,
-        "brutto": 150881
+        "netto": 150881,
+        "brutto": 185584
+      },
+      "Rezerwa": {
+        "netto": 30000,
+        "brutto": 36900
       }
     }
   },
@@ -648,6 +648,7 @@
     "2027",
     "2028",
     "2029",
-    "2030"
+    "2030",
+    "2031"
   ]
 }
