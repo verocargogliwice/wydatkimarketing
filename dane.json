@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1783327676285,
+      "rok": "2026",
+      "data": "2026-07-06",
+      "opis": "Test",
+      "firma": "test",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Reklama",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 20000,
+      "brutto": 24600,
+      "nr": "test"
+    },
+    {
       "id": 1001,
       "rok": "2025",
       "data": "2025-12-28",
