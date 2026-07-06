@@ -1,5 +1,4 @@
 
-<div id="gh-status" onclick="resetToken()" title="Kliknij, aby zmienić token GitHub" style="position:fixed;top:8px;right:10px;font-size:11px;font-family:Verdana;color:#888;background:white;padding:5px 12px;border-radius:4px;box-shadow:0 1px 6px rgba(0,0,0,0.18);z-index:9999;cursor:pointer;">Łączenie z GitHub…</div>
 <div id="app" style="font-family:Verdana,sans-serif;font-size:13px;min-height:600px;"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
@@ -97,6 +96,8 @@ const GH_REPO   = "wydatkimarketing";           // <- nazwa prywatnego repo z da
 const GH_PATH   = "dane.json";                  // plik z danymi w tym repo
 const GH_BRANCH = "main";
 let GH_SHA = null;
+let ghStatusText = "Łączenie z GitHub…";
+let ghStatusColor = "#888";
 
 function getToken(){return localStorage.getItem("gh_pat")||"";}
 function setToken(t){localStorage.setItem("gh_pat",t);}
@@ -113,6 +114,7 @@ function resetToken(){
   if(t!==null){setToken(t.trim());GH_SHA=null;loadInitial();}
 }
 function setSaveStatus(text,color){
+  ghStatusText=text;ghStatusColor=color||"#888";
   const el=document.getElementById("gh-status");
   if(el){el.textContent=text;el.style.color=color||"#888";}
 }
@@ -120,8 +122,9 @@ function setSaveStatus(text,color){
 async function ghGetFile(){
   const token=ensureToken();
   if(!token)throw new Error("Brak tokenu GitHub");
-  const res=await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}?ref=${GH_BRANCH}`,{
-    headers:{Authorization:`token ${token}`,Accept:"application/vnd.github+json"}
+  const res=await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}?ref=${GH_BRANCH}&_=${Date.now()}`,{
+    cache:"no-store",
+    headers:{Authorization:`token ${token}`,Accept:"application/vnd.github+json","If-None-Match":""}
   });
   if(res.status===404)return null; // plik jeszcze nie istnieje w repo
   if(res.status===401||res.status===403)throw new Error("Token nieprawidłowy lub brak dostępu do repo (401/403)");
@@ -559,7 +562,10 @@ function layout(){
         ${LATA_DATA.map(y=>`<option value="${y}"${S.rok===y?" selected":""}>${y}</option>`).join("")}
       </select><button onclick="addYear()" title="Dodaj rok" style="margin-left:4px;background:#444;color:#ccc;border:1px solid #555;border-radius:4px;padding:3px 9px;cursor:pointer;font-size:15px;line-height:1.2;">+</button>
     </div>
-    <button onclick="exportX()" style="background:${OR};color:white;border:none;border-radius:6px;padding:7px 14px;cursor:pointer;font-size:12px;font-family:Verdana;">&#8595; Eksport Excel</button>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span id="gh-status" onclick="resetToken()" title="Kliknij, aby zmienić token GitHub" style="font-size:11px;color:${ghStatusColor};cursor:pointer;white-space:nowrap;font-family:Verdana;">${ghStatusText}</span>
+      <button onclick="exportX()" style="background:${OR};color:white;border:none;border-radius:6px;padding:7px 14px;cursor:pointer;font-size:12px;font-family:Verdana;">&#8595; Eksport Excel</button>
+    </div>
   </div>
   <div style="background:white;border-bottom:1px solid #eee;display:flex;padding:0 16px;">
     ${[["dashboard","&#9699; Dashboard"],["dodaj",isEditTab?"\u270e Edytuj":"\u002b Dodaj"],["lista","&#9776; Wydatki"],["plan","&#9654; Plan"]].map(([v,l])=>`<button onclick="nav('${v}')" style="padding:12px 16px;border:none;background:transparent;cursor:pointer;font-size:12px;font-family:Verdana;font-weight:${S.view===v?"bold":"normal"};color:${S.view===v?OR:"#555"};border-bottom:${S.view===v?`2px solid ${OR}`:"2px solid transparent"};">${l}</button>`).join("")}
