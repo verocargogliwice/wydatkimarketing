@@ -372,7 +372,7 @@ function thS(label,col){
 
 function layout(){
   const exp=filtered(),expS=sortedFiltered();
-  const tB=exp.reduce((s,e)=>s+e.brutto,0);
+  const tB=exp.filter(e=>e.kat!=="Rezerwa").reduce((s,e)=>s+e.brutto,0);
   const tN=exp.filter(e=>e.kat!=="Rezerwa").reduce((s,e)=>s+e.netto,0);
   const plan={};KATEGORIE.forEach(k=>{plan[k]=planBrutto(S.rok,k);});
   const tPlan=planTotal(S.rok);
@@ -684,8 +684,8 @@ async function exportX(){
     /* ---- dane ---- */
     
     const tPlan=planTotal(S.rok);
-    const tB=exp.reduce((s,e)=>s+e.brutto,0);
-    const tN=exp.reduce((s,e)=>s+e.netto,0);
+    const tB=exp.filter(e=>e.kat!=="Rezerwa").reduce((s,e)=>s+e.brutto,0);
+    const tN=exp.filter(e=>e.kat!=="Rezerwa").reduce((s,e)=>s+e.netto,0);
     const tNbud=exp.filter(e=>e.kat!=="Rezerwa").reduce((s,e)=>s+e.netto,0);
     const pct=tPlan>0?tNbud/tPlan*100:0;
     const mLabel=curMonth();
