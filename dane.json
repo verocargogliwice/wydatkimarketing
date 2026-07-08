@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1783494376442,
+      "rok": "2026",
+      "data": "2026-07-01",
+      "opis": "Bluzy 4F dla obozu wokalnego",
+      "firma": "4F - OTCF S.A.",
+      "spolka": "verocargo power zielińska",
+      "kat": "Sponsoring",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 1969.4,
+      "brutto": 2422.36,
+      "nr": "EFK/26/000018749"
+    },
+    {
       "id": 1001,
       "rok": "2025",
       "data": "2025-12-28",
