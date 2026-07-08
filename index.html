@@ -402,8 +402,8 @@ function layout(){
       <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:#888;"><span>Wydano netto: ${fP(tNbud)}</span><span>Pozosta\u0142o: <b style="color:${tPlan-tNbud<0?"#e74c3c":"#2A9D8F"}">${fP(tPlan-tNbud)}</b></span><span>Plan netto: ${fP(tPlan)}</span></div>
     </div>`:""}
     <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:14px;margin-bottom:14px;">
-      <div style="background:white;padding:16px;border-radius:8px;"><div style="font-size:12px;font-weight:bold;margin-bottom:12px;">Wydatki brutto wg miesi\u0105ca (PLN)</div><canvas id="ch-bar" height="180"></canvas></div>
-      <div style="background:white;padding:16px;border-radius:8px;"><div style="font-size:12px;font-weight:bold;margin-bottom:12px;">Podzia\u0142 kategorii</div><canvas id="ch-pie" height="180"></canvas></div>
+      <div style="background:white;padding:16px;border-radius:8px;"><div style="font-size:12px;font-weight:bold;margin-bottom:12px;">Wydatki netto wg miesi\u0105ca (PLN)</div><canvas id="ch-bar" height="180"></canvas></div>
+      <div style="background:white;padding:16px;border-radius:8px;"><div style="font-size:12px;font-weight:bold;margin-bottom:2px;">Podzia\u0142 kategorii</div><div style="font-size:9px;color:#bbb;margin-bottom:10px;">warto\u015bci netto</div><canvas id="ch-pie" height="180"></canvas></div>
     </div>
     <div style="background:white;padding:16px;border-radius:8px;">
       <div style="font-size:12px;font-weight:bold;margin-bottom:14px;">Plan vs Realizacja ${S.rok}</div>
@@ -580,10 +580,10 @@ function layout(){
 
 function buildCharts(){
   const exp=filtered();
-  const byM={},rok=S.rok;exp.forEach(e=>{if(isRec(e.typ)&&e.dateFrom&&e.months>0){const bM=e.brutto/e.months,st=new Date(e.dateFrom);for(let i=0;i<e.months;i++){const d=new Date(st.getFullYear(),st.getMonth()+i,1);if(String(d.getFullYear())!==rok)continue;const k=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");byM[k]=(byM[k]||0)+bM;}}else{const k=e.data.slice(0,7);byM[k]=(byM[k]||0)+e.brutto;}});
+  const byM={},rok=S.rok;exp.forEach(e=>{if(isRec(e.typ)&&e.dateFrom&&e.months>0){const bM=e.netto/e.months,st=new Date(e.dateFrom);for(let i=0;i<e.months;i++){const d=new Date(st.getFullYear(),st.getMonth()+i,1);if(String(d.getFullYear())!==rok)continue;const k=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");byM[k]=(byM[k]||0)+bM;}}else{const k=e.data.slice(0,7);byM[k]=(byM[k]||0)+e.netto;}});
   const mK=Object.keys(byM).sort(),mV=mK.map(k=>+byM[k].toFixed(2));
   const mL=mK.map(k=>{const p=k.split("-");return MN[parseInt(p[1])-1].slice(0,3)+"/"+p[0].slice(2);});
-  const byK={};exp.forEach(e=>{byK[e.kat]=(byK[e.kat]||0)+e.brutto;});
+  const byK={};exp.forEach(e=>{byK[e.kat]=(byK[e.kat]||0)+e.netto;});
   const bc=document.getElementById("ch-bar");
   if(bc)charts.bar=new Chart(bc,{type:"bar",data:{labels:mL,datasets:[{data:mV,backgroundColor:OR,borderRadius:4}]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>fP(ctx.raw)}}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{grid:{color:"#f0f0f0"},ticks:{font:{size:10},callback:v=>new Intl.NumberFormat("pl-PL").format(v)}}}}});
   const pc=document.getElementById("ch-pie");
@@ -692,7 +692,7 @@ async function exportX(){
     const m=td().slice(0,7);
     const thisM=S.expenses.filter(e=>e.rok===S.rok&&e.data.startsWith(m)&&e.typ===TYPY[0]).reduce((s,e)=>s+e.brutto,0);
     const byK={};
-    KATEGORIE.forEach(k=>{byK[k]=exp.filter(e=>e.kat===k).reduce((s,e)=>s+e.brutto,0);});
+    KATEGORIE.forEach(k=>{byK[k]=exp.filter(e=>e.kat===k).reduce((s,e)=>s+e.netto,0);});
 
     /* ---- generowanie PNG wykresow ---- */
     async function genPng(cfg,w,h){
@@ -718,7 +718,7 @@ async function exportX(){
           legend:{position:'bottom',labels:{font:{size:14,family:'Verdana'},
             padding:16,boxWidth:16}},
           title:{display:true,
-            text:['Podzia\u0142 wydatk\u00f3w brutto \u2014 '+S.rok],
+            text:['Podzia\u0142 wydatk\u00f3w netto \u2014 '+S.rok],
             font:{size:15,family:'Verdana',weight:'bold'},
             color:'#1A1A1A',padding:{bottom:16,top:8}}}}
     },700,480);
@@ -728,16 +728,16 @@ async function exportX(){
       type:'bar',
       data:{labels:planKat,
         datasets:[
-          {label:'Wykonanie',data:planKat.map(k=>+exp.filter(e=>e.kat===k).reduce((s,e)=>s+e.brutto,0).toFixed(0)),
+          {label:'Wykonanie',data:planKat.map(k=>+exp.filter(e=>e.kat===k).reduce((s,e)=>s+e.netto,0).toFixed(0)),
             backgroundColor:'#EC5A05',borderRadius:4},
-          {label:'Plan FC'+S.rok.slice(2),data:planKat.map(k=>planBrutto(S.rok,k)),
+          {label:'Plan FC'+S.rok.slice(2),data:planKat.map(k=>planNetto(S.rok,k)),
             backgroundColor:'#DDDDDD',borderRadius:4}
         ]},
       options:{responsive:false,animation:false,indexAxis:'y',
         plugins:{
           legend:{position:'top',labels:{font:{size:13,family:'Verdana'},padding:16,boxWidth:14}},
           title:{display:true,
-            text:['% realizacji bud\u017cetu FC'+S.rok.slice(2),' Og\u00f3\u0142em: '+pct.toFixed(1)+'%  |  Wydano: '+new Intl.NumberFormat('pl-PL',{style:'currency',currency:'PLN',maximumFractionDigits:0}).format(tB)+' z '+new Intl.NumberFormat('pl-PL',{style:'currency',currency:'PLN',maximumFractionDigits:0}).format(tPlan)],
+            text:['% realizacji bud\u017cetu FC'+S.rok.slice(2),' Og\u00f3\u0142em: '+pct.toFixed(1)+'%  |  Wydano: '+new Intl.NumberFormat('pl-PL',{style:'currency',currency:'PLN',maximumFractionDigits:0}).format(tN)+' z '+new Intl.NumberFormat('pl-PL',{style:'currency',currency:'PLN',maximumFractionDigits:0}).format(tPlan)],
             font:{size:14,family:'Verdana',weight:'bold'},color:'#1A1A1A',padding:{bottom:12,top:8}}},
         scales:{
           x:{grid:{color:'#eeeeee'},
