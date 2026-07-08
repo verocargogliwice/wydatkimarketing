@@ -890,8 +890,8 @@ async function exportX(){
 
     /* -- Wiersz SUMA -- */
     dash.getRow(ri).height=22;
-    const sumB2=KATEGORIE.reduce((s,k)=>{const kb=exp.filter(e=>e.kat===k).reduce((ss,e)=>ss+e.brutto,0);return s+kb;},0);
-    const sumN2=KATEGORIE.reduce((s,k)=>{const kn=exp.filter(e=>e.kat===k).reduce((ss,e)=>ss+e.netto,0);return s+kn;},0);
+    const sumB2=KATEGORIE.filter(k=>k!=="Rezerwa").reduce((s,k)=>{const kb=exp.filter(e=>e.kat===k).reduce((ss,e)=>ss+e.brutto,0);return s+kb;},0);
+    const sumN2=KATEGORIE.filter(k=>k!=="Rezerwa").reduce((s,k)=>{const kn=exp.filter(e=>e.kat===k).reduce((ss,e)=>ss+e.netto,0);return s+kn;},0);
     setCell(dash,'B'+ri,'\u0141\u0104CZNIE',C.DK,font(C.WH,11,true),aln('left','middle'));
     setCell(dash,'C'+ri,sumB2,C.DK,font(C.WH,12,true),aln('right','middle'),null,'#,##0.00');
     setCell(dash,'D'+ri,sumN2,C.DK,font(C.WH,11,true),aln('right','middle'),null,'#,##0.00');
