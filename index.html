@@ -87,6 +87,7 @@ let charts={};
 
 function td(){return new Date().toISOString().split("T")[0];}
 function fP(v){return new Intl.NumberFormat("pl-PL",{style:"currency",currency:"PLN",maximumFractionDigits:2}).format(v||0);}
+function getVat(v){const n=parseInt(v);return isNaN(n)?23:n;}
 
 /* ══════════════════════════════════════════════════════════════
    GITHUB SYNC — dane trzymane w pliku JSON w prywatnym repo GitHub
@@ -223,7 +224,7 @@ function formMonths(){return calcMonths(S.form.dateFrom,S.form.dateTo);}
 function updateMonthDisplay(){
   const months=formMonths();
   const n=parseFloat(S.form.nettoInput)||0;
-  const vat=parseInt(S.form.vat)||23;
+  const vat=getVat(S.form.vat);
   const el=document.getElementById("f-month-info");
   const bEl=document.getElementById("f-brutto");
 
@@ -247,7 +248,7 @@ function updateMonthDisplay(){
 /* ── Kalkulacja netto→brutto (formularz) ── */
 function calcB(v){
   S.form.nettoInput=v;
-  const n=parseFloat(v)||0,vat=parseInt(S.form.vat)||23;
+  const n=parseFloat(v)||0,vat=getVat(S.form.vat);
   const months=formMonths();
   let b;
   if(S.form.typ===TYPY[2]&&months>0){b=+(n*months*(1+vat/100)).toFixed(2);}
@@ -262,7 +263,7 @@ function calcB(v){
 }
 function calcN(v){
   S.form.brutto=v;
-  const b=parseFloat(v)||0,vat=parseInt(S.form.vat)||23;
+  const b=parseFloat(v)||0,vat=getVat(S.form.vat);
   const months=formMonths();
   let n;
   if(S.form.typ===TYPY[2]&&months>0){n=b?+(b/months/(1+vat/100)).toFixed(2):"";}
@@ -601,14 +602,14 @@ function editExp(id){
   /* Dla Subskrypcji przywracamy stawkę miesięczną; dla reszty łączną */
   const nettoInput=(e.typ===TYPY[2]&&e.nettoM)?e.nettoM:e.netto;
   S.form={data:e.data,opis:e.opis,firma:e.firma,spolka:e.spolka,kat:e.kat,
-    typ:e.typ,vat:e.vat||23,nettoInput:nettoInput,brutto:e.brutto,nr:e.nr||"",
+    typ:e.typ,vat:getVat(e.vat),nettoInput:nettoInput,brutto:e.brutto,nr:e.nr||"",
     dateFrom:e.dateFrom||"",dateTo:e.dateTo||""};
   S.editId=id;S.view="dodaj";render();
 }
 
 function saveEntry(f,existingId){
   const months=isRec(f.typ)?calcMonths(f.dateFrom,f.dateTo):0;
-  const vat=parseInt(f.vat)||23;
+  const vat=getVat(f.vat);
   const ni=parseFloat(f.nettoInput)||0;
   let netto,nettoM;
   if(f.typ===TYPY[2]&&months>0){
@@ -648,7 +649,7 @@ function cancelEdit(){S.editId=null;S.form=blankForm();S.view="lista";render();}
 function resetForm(){S.form=blankForm();render();}
 function calcB(v){
   S.form.nettoInput=v;
-  const n=parseFloat(v)||0,vat=parseInt(S.form.vat)||23,months=formMonths();
+  const n=parseFloat(v)||0,vat=getVat(S.form.vat),months=formMonths();
   let b;
   if(S.form.typ===TYPY[2]&&months>0)b=+(n*months*(1+vat/100)).toFixed(2);
   else b=n?+(n*(1+vat/100)).toFixed(2):"";
@@ -662,7 +663,7 @@ function calcB(v){
 }
 function calcN(v){
   S.form.brutto=v;
-  const b=parseFloat(v)||0,vat=parseInt(S.form.vat)||23,months=formMonths();
+  const b=parseFloat(v)||0,vat=getVat(S.form.vat),months=formMonths();
   let n;
   if(S.form.typ===TYPY[2]&&months>0)n=b?+(b/months/(1+vat/100)).toFixed(2):"";
   else n=b?+(b/(1+vat/100)).toFixed(2):"";
