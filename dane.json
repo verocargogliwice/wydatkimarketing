@@ -272,9 +272,9 @@
       "spolka": "verocargo sp. z o.o.",
       "kat": "Rezerwa",
       "typ": "Jednorazowy",
-      "vat": 23,
+      "vat": 0,
       "netto": 30000,
-      "brutto": 36900,
+      "brutto": 30000,
       "nr": ""
     },
     {
