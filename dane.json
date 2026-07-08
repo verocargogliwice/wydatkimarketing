@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1783515328115,
+      "rok": "2026",
+      "data": "2026-07-08",
+      "opis": "Etykiety testowe na miód",
+      "firma": "AVERY ZWECKFORM GmbH",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 254.89,
+      "brutto": 313.51,
+      "nr": "Faktura nr 185100012451"
+    },
+    {
       "id": 1783514872202,
       "rok": "2026",
       "data": "2026-07-07",
