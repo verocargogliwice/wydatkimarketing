@@ -969,7 +969,7 @@ async function exportX(){
 
     /* R2: Naglowki */
     wsP.getRow(2).height=24;
-    ['Kategoria','Plan (zł)','Wykonanie (zł)','% planu','Pozostało (zł)'].forEach((h,i)=>{
+    ['Kategoria','Plan netto (zł)','Wykonanie netto (zł)','% planu','Pozostało (zł)'].forEach((h,i)=>{
       const c=wsP.getRow(2).getCell(i+1);
       c.value=h;c.fill=fill(C.DK);c.font=font(C.WH,11,true);
       c.alignment=aln(i===0?'left':'center','middle');c.border=brd(C.DK);
@@ -979,8 +979,8 @@ async function exportX(){
     let pri=3;
     const allYP=S.expenses.filter(e=>e.rok===S.rok);
     KATEGORIE.forEach((k,ki)=>{
-      const pk=planBrutto(S.rok,k);
-      const sk=allYP.filter(e=>e.kat===k).reduce((s,e)=>s+e.brutto,0);
+      const pk=planNetto(S.rok,k);
+      const sk=allYP.filter(e=>e.kat===k).reduce((s,e)=>s+e.netto,0);
       const pp=pk>0?sk/pk:null;
       const rem=pk>0?pk-sk:null;
       const bg=ki%2===0?C.BGL:C.WH;
@@ -1025,7 +1025,7 @@ async function exportX(){
 
     /* Wiersz SUMA */
     wsP.getRow(pri).height=28;
-    const totSpent=S.expenses.filter(e=>e.rok===S.rok).reduce((s,e)=>s+e.brutto,0);
+    const totSpent=tNbud;
 
     const ps1=wsP.getRow(pri).getCell(1);
     ps1.value='ŁĄCZNIE';ps1.fill=fill(C.DK);ps1.font=font(C.WH,13,true);
@@ -1042,9 +1042,9 @@ async function exportX(){
     ps3.alignment=aln('right','middle');ps3.border=brd(C.DK);
 
     const ps4=wsP.getRow(pri).getCell(4);
-    if(tPlan>0){ps4.value=totSpent/tPlan;ps4.numFmt='0.0%';}else{ps4.value='—';}
+    if(tPlan>0){ps4.value=pct/100;ps4.numFmt='0.0%';}else{ps4.value='—';}
     ps4.fill=fill(C.DK);
-    ps4.font=font(tPlan>0&&totSpent/tPlan>0.9?C.RD:C.GR,14,true);
+    ps4.font=font(tPlan>0&&pct>90?C.RD:C.GR,14,true);
     ps4.alignment=aln('center','middle');ps4.border=brd(C.DK);
 
     const ps5=wsP.getRow(pri).getCell(5);
