@@ -379,7 +379,7 @@ function layout(){
   const tNbud=exp.filter(e=>e.kat!=="Rezerwa").reduce((s,e)=>s+e.netto,0);
   const pct=tPlan>0?Math.min(100,tNbud/tPlan*100):0;
   const m=td().slice(0,7);
-  const thisM=S.expenses.filter(e=>e.rok===S.rok&&e.data.startsWith(m)).reduce((s,e)=>s+e.brutto,0);
+  const thisM=S.expenses.filter(e=>e.rok===S.rok&&e.data.startsWith(m)&&e.typ===TYPY[0]).reduce((s,e)=>s+e.brutto,0);
   const isEdit=!!S.editId;
   const f=S.form;
   const rec=isRec(f.typ);
@@ -393,7 +393,7 @@ function layout(){
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px;">
       <div style="background:white;padding:16px;border-radius:8px;border-left:4px solid ${OR};"><div style="font-size:19px;font-weight:bold;color:${OR};">${fP(tN)}</div><div style="font-size:11px;color:#888;margin-top:4px;">Netto \u0142\u0105cznie ${S.rok}</div></div>
       <div style="background:white;padding:16px;border-radius:8px;border-left:4px solid ${DK};"><div style="font-size:19px;font-weight:bold;color:${DK};">${fP(tB)}</div><div style="font-size:11px;color:#888;margin-top:4px;">Brutto \u0142\u0105cznie</div></div>
-      <div style="background:white;padding:16px;border-radius:8px;border-left:4px solid #264653;"><div style="font-size:19px;font-weight:bold;color:#264653;">${fP(thisM)}</div><div style="font-size:11px;color:#888;margin-top:4px;">Bie\u017c\u0105cy miesi\u0105c (${curMonth()})</div></div>
+      <div style="background:white;padding:16px;border-radius:8px;border-left:4px solid #264653;"><div style="font-size:19px;font-weight:bold;color:#264653;">${fP(thisM)}</div><div style="font-size:11px;color:#888;margin-top:4px;">Bie\u017c\u0105cy miesi\u0105c (${curMonth()})</div><div style="font-size:9px;color:#bbb;margin-top:2px;">bez koszt\u00f3w sta\u0142ych i subskrypcji</div></div>
       <div style="background:white;padding:16px;border-radius:8px;border-left:4px solid #2A9D8F;"><div style="font-size:19px;font-weight:bold;color:#2A9D8F;">${exp.length}</div><div style="font-size:11px;color:#888;margin-top:4px;">Liczba pozycji</div></div>
     </div>
     ${tPlan>0?`<div style="background:white;padding:16px;border-radius:8px;margin-bottom:18px;">
@@ -690,7 +690,7 @@ async function exportX(){
     const pct=tPlan>0?tNbud/tPlan*100:0;
     const mLabel=curMonth();
     const m=td().slice(0,7);
-    const thisM=S.expenses.filter(e=>e.rok===S.rok&&e.data.startsWith(m)).reduce((s,e)=>s+e.brutto,0);
+    const thisM=S.expenses.filter(e=>e.rok===S.rok&&e.data.startsWith(m)&&e.typ===TYPY[0]).reduce((s,e)=>s+e.brutto,0);
     const byK={};
     KATEGORIE.forEach(k=>{byK[k]=exp.filter(e=>e.kat===k).reduce((s,e)=>s+e.brutto,0);});
 
@@ -825,7 +825,7 @@ async function exportX(){
     kpi(dash,[4,'D'],'NETTO \u0141\u0104CZNIE',tN,'#,##0.00 "z\u0142"','warto\u015b\u0107 netto',C.BGL,C.DK);
     kpi(dash,[4,'G'],'REALIZACJA FC'+S.rok.slice(2),pct/100,'0.0%',
       'Wydano '+fP(tB)+' / Plan '+fP(tPlan),C.BGG,pct>90?C.RD:C.GR);
-    kpi(dash,[4,'I'],'BIE\u017b\u0104CY MIESI\u0104C',thisM,'#,##0.00 "z\u0142"',mLabel,C.BLP,C.PU);
+    kpi(dash,[4,'I'],'BIE\u017b\u0104CY MIESI\u0104C',thisM,'#,##0.00 "z\u0142"',mLabel+' \u2013 bez sta\u0142ych/subskrypcji',C.BLP,C.PU);
 
     /* -- R9: Naglowek sekcji wykresow -- */
     dash.getRow(9).height=22;
