@@ -867,15 +867,15 @@ async function exportX(){
       const kb=exp.filter(e=>e.kat===k).reduce((s,e)=>s+e.brutto,0);
       const kn=exp.filter(e=>e.kat===k).reduce((s,e)=>s+e.netto,0);
       if(kb===0)return;
-      const kpl=planBrutto(S.rok,k);
-      const kpp=kpl>0?kb/kpl:null;
-      const krem=kpl>0?kpl-kb:null;
+      const kpl=planNetto(S.rok,k);
+      const kpp=kpl>0?kn/kpl:null;
+      const krem=kpl>0?kpl-kn:null;
       const bg=ki%2===0?C.BGL:C.WH;
       dash.getRow(ri).height=17;
       setCell(dash,'B'+ri,k,bg,font(C.DK,11,true),aln('left','middle',true),brd(C.LB));
       setCell(dash,'C'+ri,kb,bg,font(C.OR,11,true),aln('right','middle'),brd(C.LB),'#,##0.00');
       setCell(dash,'D'+ri,kn,bg,font(C.DK,10,false),aln('right','middle'),brd(C.LB),'#,##0.00');
-      setCell(dash,'E'+ri,tB>0?kb/tB:0,bg,font(C.DK,10,false),aln('center','middle'),brd(C.LB),'0.0%');
+      setCell(dash,'E'+ri,tN>0?kn/tN:0,bg,font(C.DK,10,false),aln('center','middle'),brd(C.LB),'0.0%');
       setCell(dash,'G'+ri,kpl||'\u2014',bg,font('FF666666',10,false),aln('right','middle'),brd(C.LB),kpl?'#,##0.00':'');
       if(kpp!==null){
         const fc=kpp>0.9?C.RD:(kpp>=0.5?C.GR:C.OR);
@@ -898,8 +898,8 @@ async function exportX(){
     setCell(dash,'E'+ri,1,C.DK,font(C.WH,11,true),aln('center','middle'),null,'0.0%');
     if(tPlan>0){
       setCell(dash,'G'+ri,tPlan,C.DK,font(C.WH,11,true),aln('right','middle'),null,'#,##0.00');
-      setCell(dash,'H'+ri,sumB2/tPlan,C.DK,font(pct>90?C.RD:C.GR,12,true),aln('center','middle'),null,'0.0%');
-      setCell(dash,'I'+ri,tPlan-sumB2,C.DK,font(tPlan-sumB2<0?C.RD:C.GR,11,true),aln('right','middle'),null,'#,##0.00');
+      setCell(dash,'H'+ri,pct/100,C.DK,font(pct>90?C.RD:C.GR,12,true),aln('center','middle'),null,'0.0%');
+      setCell(dash,'I'+ri,tPlan-sumN2,C.DK,font(tPlan-sumN2<0?C.RD:C.GR,11,true),aln('right','middle'),null,'#,##0.00');
     }
 
     /* ======================================
