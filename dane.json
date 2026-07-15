@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1784121245776,
+      "rok": "2026",
+      "data": "2026-07-15",
+      "opis": "Etykiety - banderolki",
+      "firma": "AVERY ZWECKFORM GmbH",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 0,
+      "netto": 131.54,
+      "brutto": 131.54,
+      "nr": "PROFORMA"
+    },
+    {
       "id": 1784121056838,
       "rok": "2026",
       "data": "2026-07-15",
