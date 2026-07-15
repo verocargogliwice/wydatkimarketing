@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1784121056838,
+      "rok": "2026",
+      "data": "2026-07-15",
+      "opis": "Balony event Piast",
+      "firma": "TanieGadżety.pl - SpiroPrint E. Zalewska, A. Burzyński, sp.j.",
+      "spolka": "verocargo power zielińska",
+      "kat": "Eventy",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 270.16,
+      "brutto": 332.3,
+      "nr": "PROFORMA"
+    },
+    {
       "id": 1783691313426,
       "rok": "2026",
       "data": "2026-07-10",
