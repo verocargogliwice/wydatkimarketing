@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1784190799940,
+      "rok": "2026",
+      "data": "2026-08-08",
+      "opis": "LinkedIn Premium",
+      "firma": "LinkedIn",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Reklama",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 5000,
+      "brutto": 6150,
+      "nr": ""
+    },
+    {
       "id": 1784190305044,
       "rok": "2026",
       "data": "2026-07-08",
