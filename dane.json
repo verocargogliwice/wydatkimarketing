@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1784190305044,
+      "rok": "2026",
+      "data": "2026-07-08",
+      "opis": "Budżet Reklamowy",
+      "firma": "Meta",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Reklama",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 1000,
+      "brutto": 1230,
+      "nr": ""
+    },
+    {
       "id": 1784121245776,
       "rok": "2026",
       "data": "2026-07-15",
