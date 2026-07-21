@@ -279,13 +279,14 @@
       "spolka": "verocargo sp. z o.o.",
       "kat": "Sponsoring",
       "typ": "Stały",
-      "netto": 1000,
-      "brutto": 1000,
+      "vat": 23,
+      "netto": 12000,
+      "nettoM": 1000,
+      "brutto": 14760,
       "nr": "",
       "dateFrom": "2026-01-01",
       "dateTo": "2026-12-31",
-      "months": 12,
-      "nettoM": 83.33
+      "months": 12
     },
     {
       "id": 1007,
