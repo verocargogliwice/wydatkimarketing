@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1785222620477,
+      "rok": "2026",
+      "data": "2026-07-28",
+      "opis": "Stojak i pompka ręczna do balonów",
+      "firma": "SHOPEX Tomasz Jopek",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Reklama",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 39.96,
+      "brutto": 49.15,
+      "nr": "Fs 389/07/2026"
+    },
+    {
       "id": 1784626572352,
       "rok": "2026",
       "data": "2026-07-21",
