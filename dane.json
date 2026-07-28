@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1785223143647,
+      "rok": "2026",
+      "data": "2026-07-27",
+      "opis": "Przedmioty na stoisko Piast - kredki, mazaki, temperówki, gumki, pojemniki, podkładki, taśmy itd",
+      "firma": "Grupa Biuro-LANDS",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Eventy",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 277.94,
+      "brutto": 341.87,
+      "nr": "(S)FS-294/07/26/EWB"
+    },
+    {
       "id": 1785222620477,
       "rok": "2026",
       "data": "2026-07-27",
