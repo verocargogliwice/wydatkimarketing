@@ -1,6 +1,24 @@
 {
   "expenses": [
     {
+      "id": 1785741961180,
+      "rok": "2026",
+      "data": "2026-08-01",
+      "opis": "Victoria Pilchowice – abonament sponsorski nowa umowa",
+      "firma": "Victoria Pilchowice",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Sponsoring",
+      "typ": "Stały",
+      "vat": 0,
+      "netto": 12000,
+      "nettoM": 1000,
+      "brutto": 12000,
+      "nr": "",
+      "dateFrom": "2026-08-01",
+      "dateTo": "2027-07-31",
+      "months": 12
+    },
+    {
       "id": 1785484583391,
       "rok": "2026",
       "data": "2026-07-29",
