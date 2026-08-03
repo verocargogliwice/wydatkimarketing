@@ -1,6 +1,22 @@
 {
   "expenses": [
     {
+      "id": 1785742428489,
+      "rok": "2026",
+      "data": "2026-08-01",
+      "opis": "Victoria Pilchowice +1000 za sierpień ",
+      "firma": "Victoria Pilchowice",
+      "spolka": "verocargo power zielińska",
+      "kat": "Sponsoring",
+      "typ": "Jednorazowy",
+      "vat": 0,
+      "netto": 1000,
+      "brutto": 1000,
+      "nr": "",
+      "dateFrom": "2026-01-01",
+      "dateTo": "2026-07-31"
+    },
+    {
       "id": 1785741961180,
       "rok": "2026",
       "data": "2026-08-01",
