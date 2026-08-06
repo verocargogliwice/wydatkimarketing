@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1785997068275,
+      "rok": "2026",
+      "data": "2026-08-05",
+      "opis": "Kampania",
+      "firma": "LinkedIn",
+      "spolka": "verocargo power zielińska",
+      "kat": "Reklama",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 478.65,
+      "brutto": 588.74,
+      "nr": "781288928066"
+    },
+    {
       "id": 1785997030635,
       "rok": "2026",
       "data": "2026-08-01",
