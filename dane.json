@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1785997193611,
+      "rok": "2026",
+      "data": "2026-08-05",
+      "opis": "Kampania doładowanie konta",
+      "firma": "Meta",
+      "spolka": "verocargo power zielińska",
+      "kat": "Reklama",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 1000,
+      "brutto": 1230,
+      "nr": ""
+    },
+    {
       "id": 1785997068275,
       "rok": "2026",
       "data": "2026-08-05",
