@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1786969778459,
+      "rok": "2026",
+      "data": "2026-08-17",
+      "opis": "Banderolki i etykiety na miód - drugie zamówienie",
+      "firma": "Avery Zweckform",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 0,
+      "netto": 150.43,
+      "brutto": 150.43,
+      "nr": " 185100012813"
+    },
+    {
       "id": 1786430911656,
       "rok": "2026",
       "data": "2026-08-07",
