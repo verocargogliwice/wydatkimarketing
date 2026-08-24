@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1787558613757,
+      "rok": "2026",
+      "data": "2026-08-18",
+      "opis": "Kubki termiczne",
+      "firma": "Gratisownia.pl",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 17008.4,
+      "brutto": 20920.33,
+      "nr": ""
+    },
+    {
       "id": 1787554561165,
       "rok": "2026",
       "data": "2026-08-20",
