@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1787826834927,
+      "rok": "2026",
+      "data": "2026-08-25",
+      "opis": "Brakujące etui",
+      "firma": "Funny Case",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 89.7,
+      "brutto": 110.33,
+      "nr": ""
+    },
+    {
       "id": 1787638543887,
       "rok": "2026",
       "data": "2026-08-20",
