@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1788336203821,
+      "rok": "2026",
+      "data": "2026-08-31",
+      "opis": "Gniotki gwiazdki",
+      "firma": "Gratisownia",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 2915.8,
+      "brutto": 3586.43,
+      "nr": "FVZ 513/2026 - ZALICZKOWA"
+    },
+    {
       "id": 1787826834927,
       "rok": "2026",
       "data": "2026-08-25",
