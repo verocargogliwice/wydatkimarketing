@@ -1131,36 +1131,36 @@
     },
     "2027": {
       "Reklama": {
-        "netto": 1,
-        "brutto": 1
+        "netto": 0,
+        "brutto": 0
       },
       "Digital": {
-        "netto": 1,
-        "brutto": 1
+        "netto": 0,
+        "brutto": 0
       },
       "Sponsoring": {
-        "netto": 1,
-        "brutto": 1
+        "netto": 0,
+        "brutto": 0
       },
       "Eventy": {
-        "netto": 1,
-        "brutto": 1
+        "netto": 0,
+        "brutto": 0
       },
       "Branding": {
-        "netto": 1,
-        "brutto": 1
+        "netto": 0,
+        "brutto": 0
       },
       "Produkcja": {
-        "netto": 1,
-        "brutto": 1
+        "netto": 0,
+        "brutto": 0
       },
       "B2B/Repre": {
-        "netto": 1,
-        "brutto": 1
+        "netto": 0,
+        "brutto": 0
       },
       "Rezerwa": {
-        "netto": 1,
-        "brutto": 1
+        "netto": 0,
+        "brutto": 0
       }
     }
   },
