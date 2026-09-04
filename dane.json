@@ -1128,6 +1128,40 @@
         "netto": 30000,
         "brutto": 36900
       }
+    },
+    "2027": {
+      "Reklama": {
+        "netto": 1,
+        "brutto": 1
+      },
+      "Digital": {
+        "netto": 1,
+        "brutto": 1
+      },
+      "Sponsoring": {
+        "netto": 1,
+        "brutto": 1
+      },
+      "Eventy": {
+        "netto": 1,
+        "brutto": 1
+      },
+      "Branding": {
+        "netto": 1,
+        "brutto": 1
+      },
+      "Produkcja": {
+        "netto": 1,
+        "brutto": 1
+      },
+      "B2B/Repre": {
+        "netto": 1,
+        "brutto": 1
+      },
+      "Rezerwa": {
+        "netto": 1,
+        "brutto": 1
+      }
     }
   },
   "lata": [
