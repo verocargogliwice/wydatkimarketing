@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1789369434888,
+      "rok": "2026",
+      "data": "2026-09-14",
+      "opis": "Latarki Bezpieczeństwa",
+      "firma": "Open Gift",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 10555,
+      "brutto": 12982.65,
+      "nr": " OG/611/09/2026/FVS"
+    },
+    {
       "id": 1789368851806,
       "rok": "2026",
       "data": "2026-09-14",
