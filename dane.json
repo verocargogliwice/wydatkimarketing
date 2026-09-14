@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1789368851806,
+      "rok": "2026",
+      "data": "2026-09-14",
+      "opis": "Projekt graficzny Double",
+      "firma": "Tech Media",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 1200,
+      "brutto": 1476,
+      "nr": "PROFORMA"
+    },
+    {
       "id": 1788349767309,
       "rok": "2026",
       "data": "2026-09-01",
