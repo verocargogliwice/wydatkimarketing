@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1789996794272,
+      "rok": "2026",
+      "data": "2026-09-21",
+      "opis": "Ściereczki do okularów/szkła",
+      "firma": "Open Gift",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 2227,
+      "brutto": 2739.21,
+      "nr": ""
+    },
+    {
       "id": 1789369434888,
       "rok": "2026",
       "data": "2026-09-14",
