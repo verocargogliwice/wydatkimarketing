@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1790151641865,
+      "rok": "2026",
+      "data": "2026-09-23",
+      "opis": "Magnesy z otwieraczem",
+      "firma": "Open Gift",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 2780,
+      "brutto": 3419.4,
+      "nr": "PROFORMA"
+    },
+    {
       "id": 1789996794272,
       "rok": "2026",
       "data": "2026-09-21",
