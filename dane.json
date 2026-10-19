@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1792398867264,
+      "rok": "2026",
+      "data": "2026-10-30",
+      "opis": "Pierniki z logo",
+      "firma": "Słodkie Cuda Magdalena Micewicz",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 4225,
+      "brutto": 5196.75,
+      "nr": "PROFORMA"
+    },
+    {
       "id": 1792398734551,
       "rok": "2026",
       "data": "2026-10-09",
