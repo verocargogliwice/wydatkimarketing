@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1792569337833,
+      "rok": "2026",
+      "data": "2026-10-20",
+      "opis": "Logo na kalendarzu RIPH",
+      "firma": "RIPH",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 500,
+      "brutto": 615,
+      "nr": "A26/460"
+    },
+    {
       "id": 1792398867264,
       "rok": "2026",
       "data": "2026-10-30",
