@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1793007814659,
+      "rok": "2026",
+      "data": "2026-10-26",
+      "opis": "Reklama na stadionie Piast",
+      "firma": "STACHURA BARTŁOMIEJ BS STUDIO",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Reklama",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 750,
+      "brutto": 922.5,
+      "nr": "21/10/2026"
+    },
+    {
       "id": 1792569337833,
       "rok": "2026",
       "data": "2026-10-20",
