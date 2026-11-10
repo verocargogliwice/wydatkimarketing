@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1794296374071,
+      "rok": "2026",
+      "data": "2026-10-20",
+      "opis": "Pudełka paczki świąteczne - testowe",
+      "firma": "Neopak",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 31.06,
+      "brutto": 38.2,
+      "nr": "FS 286778/2026"
+    },
+    {
       "id": 1793007814659,
       "rok": "2026",
       "data": "2026-10-26",
