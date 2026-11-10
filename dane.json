@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1794299233259,
+      "rok": "2026",
+      "data": "2026-01-01",
+      "opis": "Produkcja filmu marketingowego 2 rata",
+      "firma": "Otto family",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Produkcja",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 25000,
+      "brutto": 30750,
+      "nr": ""
+    },
+    {
       "id": 1794297647258,
       "rok": "2026",
       "data": "2026-10-29",
