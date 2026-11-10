@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1794299824280,
+      "rok": "2026",
+      "data": "2026-11-10",
+      "opis": "Herbaty świąteczne",
+      "firma": "Amelia Wedding",
+      "spolka": "verocargo sp. z o.o.",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 3885.37,
+      "brutto": 4779.01,
+      "nr": "385/2026"
+    },
+    {
       "id": 1794299233259,
       "rok": "2026",
       "data": "2026-01-01",
