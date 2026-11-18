@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1795005325719,
+      "rok": "2026",
+      "data": "2026-11-03",
+      "opis": "Naklejki świąteczne",
+      "firma": "Vprint",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 534,
+      "brutto": 656.82,
+      "nr": "FVS/227/10/26"
+    },
+    {
       "id": 1795003811533,
       "rok": "2026",
       "data": "2026-11-03",
