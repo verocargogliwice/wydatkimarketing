@@ -1,6 +1,20 @@
 {
   "expenses": [
     {
+      "id": 1795003333342,
+      "rok": "2026",
+      "data": "2026-11-18",
+      "opis": "Kalendarze 2027 - przedpłata",
+      "firma": "Infomax",
+      "spolka": "verocargo power zielińska",
+      "kat": "Branding",
+      "typ": "Jednorazowy",
+      "vat": 23,
+      "netto": 27105.69,
+      "brutto": 33340,
+      "nr": "ZS-38/26/TERPA/TMP"
+    },
+    {
       "id": 1794306305396,
       "rok": "2026",
       "data": "2026-01-15",
